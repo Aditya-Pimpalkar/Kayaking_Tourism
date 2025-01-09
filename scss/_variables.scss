@@ -1,0 +1,18 @@
+/* Variables */
+:root {
+  --primary-color: #ff6600;  /* Orange Color */
+  --secondary-color: #333;   /* Text Color */
+  --white-color: #fff;       /* White Color */
+  --dark-color: #222;        /* Dark Color */
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}

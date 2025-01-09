@@ -1,0 +1,120 @@
+/* Container-adv setup */
+.container-adv-background{
+  background: linear-gradient(to bottom, #ede9e9 50%, #ff9900 50%); /* Light grey on top, orange on bottom */
+
+}
+.container-adv {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; /* Ensure the image doesn't overflow the container */
+}
+
+/* Image Section (Position image on top of background) */
+.image-section {
+  width: 60%;
+  position: relative;
+}
+
+.image-section img {
+  position: absolute; /* Positioned on top of background */
+  top: 100px;
+  left: 100px;
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+  z-index: 2; /* Make sure image is on top */
+  opacity: 0.9; /* Slight transparency to show background */
+}
+
+/* Text Section */
+.text-section {
+  position: absolute;
+  left: 470px;
+  top: 150px;
+
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 3; /* Ensure text is on top of everything */
+}
+
+.text-content {
+  left: 450px;
+
+  background-color: white; /* White background for text */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  z-index: 4;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+a {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button.learn-more {
+  padding: 10px 20px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.learn-more:hover {
+  background-color: #e68a00;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #ff9900;
+  color: black;
+  padding: 50px;
+  text-align: center;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+}
+
+
+.testimonial {
+  width: 30%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
+/* Pseudo-classes and Pseudo-elements */
+.testimonial h3::after {
+  content: ' - Customer';
+  font-weight: normal;
+  color: #ffcc00;
+}

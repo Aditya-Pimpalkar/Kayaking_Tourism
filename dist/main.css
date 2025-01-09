@@ -1,0 +1,632 @@
+/* Variables */
+:root {
+  --primary-color: #ff6600; /* Orange Color */
+  --secondary-color: #333; /* Text Color */
+  --white-color: #fff; /* White Color */
+  --dark-color: #222; /* Dark Color */
+}
+
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+}
+
+/* main-banner - Hero Section */
+.hero {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Orange Background (1st Layer) */
+.orange-background {
+  position: absolute;
+  top: 40%;
+  right: 30%;
+  width: 50%;
+  height: 400px;
+  background-color: var(--primary-color);
+  z-index: 1; /* Base layer */
+  transform: translate(50%, -50%);
+}
+
+/* Hero Image (2nd Layer) */
+.hero-image {
+  position: absolute;
+  top: 20%;
+  /* right: 5%; */
+  width: 75%;
+  height: auto;
+  justify-content: center;
+  z-index: 2; /* Middle layer */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for effect */
+}
+
+/* Text Box (3rd Layer) */
+.hero-text {
+  position: absolute;
+  bottom: -375px; /* Moves the box below the image */
+  left: 320px;
+  background-color: var(--white-color);
+  padding: 40px;
+  z-index: 3; /* Top layer */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  line-height: 1.4;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #e65a00; /* Darker shade of orange */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--white-color);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  #menu-toggle:checked + .menu-icon + ul {
+    display: flex;
+  }
+  /* Hero Section Responsive */
+  .hero .hero-image {
+    width: 100%;
+    height: auto;
+  }
+  .hero .orange-background {
+    width: 300px;
+    height: 200px;
+  }
+  .hero .hero-text {
+    left: 20px;
+    bottom: 20px;
+  }
+}
+/* Header */
+header {
+  background-color: #fff;
+  padding: 20px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  width: 80px;
+}
+
+.menu {
+  position: relative;
+}
+
+.menu summary {
+  cursor: pointer;
+  padding: 10px 20px;
+  outline: none;
+}
+
+.menu a {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #004d40;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  margin-left: 5px;
+}
+
+.menu[open] a {
+  display: inline-block;
+}
+
+.menu a:hover {
+  background-color: #eee;
+}
+
+/* Split Background Section */
+.split-background {
+  width: 100%;
+}
+
+/* Dark Background (Top) */
+.dark-background {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 50px 0;
+  position: relative;
+  height: 650px;
+}
+
+.dark-background h2 {
+  margin-top: 375px;
+  font-size: 36px;
+  margin-bottom: 15px;
+}
+
+.dark-background p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.dark-background a {
+  color: #f57c00;
+  text-decoration: none;
+}
+
+/* Card Section (Bottom, Half Black and Half White Background) */
+.card-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 50px;
+  flex-wrap: wrap;
+  background: linear-gradient(to bottom, #333 60%, #f6f2f2 40%);
+  position: relative;
+  top: -150px;
+  z-index: 2;
+}
+
+.card {
+  width: 300px;
+  height: 400px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.card img {
+  width: 100%;
+  height: 60%;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+.card p {
+  font-size: 14px;
+  color: #666;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+/* Call to Action Button */
+.cta-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: #f57c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #e65a00;
+}
+
+.container-gallery {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 50px;
+  max-width: 1200px;
+  height: 100vh; /* Set the height of the container to fill the viewport */
+}
+
+/* Left Side: Text and Thumbnails */
+.left-side {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+.content {
+  flex-grow: 0;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #666;
+}
+
+a {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button.learn-more {
+  padding: 10px 20px;
+  background-color: #ff9900;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button.learn-more:hover {
+  background-color: #e68a00;
+}
+
+.thumbnail-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Create 3 columns */
+  grid-gap: 20px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.thumbnail-gallery img {
+  width: 300px;
+  height: 200px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+/* Right Side: Main Image */
+.right-side {
+  width: 20%;
+  display: flex;
+}
+
+.main-image img {
+  width: 400px;
+  height: 627px;
+  object-fit: cover;
+  border-radius: 10px;
+  max-height: 100%; /* Ensure the main image height equals the left side */
+}
+
+.left-side, .right-side {
+  height: 100%; /* Ensure both left and right sides take full height */
+}
+
+.container-background {
+  width: 100%;
+  padding: 10px;
+  background-color: #f6f2f2; /* Greyish background */
+  margin-top: -150px; /* Overlap with the card section */
+  position: relative;
+  z-index: 3;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+.main-title {
+  text-align: center;
+  font-size: 36px;
+  margin-bottom: 50px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap */
+  justify-content: space-between; /* Space between items */
+}
+
+.item {
+  background-color: #f6f2f2;
+  border-radius: 10px;
+  padding: 20px;
+  width: calc(50% - 20px); /* Adjust width to fit 2 items in a row */
+  margin-bottom: 20px; /* Space between rows */
+  position: relative;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background-color: #f57c00; /* Orange color */
+  border-radius: 50%;
+  position: absolute;
+  top: 15px; /* Adjust position */
+  left: -35px;
+}
+
+.item h2 {
+  font-size: 24px;
+}
+
+.item p {
+  margin-top: 10px;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Kayak Tours Section */
+.kayak-tours-section {
+  background-color: #ede9e9;
+  padding: 40px 20px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.kayak-tours-section h2 {
+  font-size: 2.5em;
+  color: black;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.tours-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.tour-summary {
+  background-color: #d3d3d3;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 400px;
+  text-align: left;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.plus-icon {
+  font-weight: bold;
+  font-size: 18px;
+}
+
+details {
+  margin-bottom: 15px;
+}
+
+details[open] .tour-summary {
+  background-color: #b0b0b0;
+}
+
+details p {
+  margin: 5px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.tours-container ::-webkit-details-marker {
+  display: none;
+}
+
+/* Container-adv setup */
+.container-adv-background {
+  background: linear-gradient(to bottom, #ede9e9 50%, #ff9900 50%); /* Light grey on top, orange on bottom */
+}
+
+.container-adv {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden; /* Ensure the image doesn't overflow the container */
+}
+
+/* Image Section (Position image on top of background) */
+.image-section {
+  width: 60%;
+  position: relative;
+}
+
+.image-section img {
+  position: absolute; /* Positioned on top of background */
+  top: 100px;
+  left: 100px;
+  width: 75%;
+  height: 75%;
+  object-fit: cover;
+  z-index: 2; /* Make sure image is on top */
+  opacity: 0.9; /* Slight transparency to show background */
+}
+
+/* Text Section */
+.text-section {
+  position: absolute;
+  left: 470px;
+  top: 150px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  z-index: 3; /* Ensure text is on top of everything */
+}
+
+.text-content {
+  left: 450px;
+  background-color: white; /* White background for text */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 90%;
+  z-index: 4;
+}
+
+h1 {
+  font-size: 36px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 20px;
+  line-height: 1.6;
+}
+
+a {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button.learn-more {
+  padding: 10px 20px;
+  background-color: #ff9900;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.learn-more:hover {
+  background-color: #e68a00;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+  background-color: #ff9900;
+  color: black;
+  padding: 50px;
+  text-align: center;
+}
+
+.testimonials {
+  display: flex;
+  justify-content: space-around;
+}
+
+.testimonial {
+  width: 30%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+/* Pseudo-classes and Pseudo-elements */
+.testimonial h3::after {
+  content: " - Customer";
+  font-weight: normal;
+  color: #ffcc00;
+}
+
+/* Contact Us Section */
+#ContactUs {
+  padding: 20px;
+  background-color: #f8f9f9;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.contact-form {
+  width: 50%;
+}
+
+.contact-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-form input, .contact-form textarea {
+  margin-bottom: 20px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-form button {
+  background-color: #ff5700;
+  color: white;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+/*# sourceMappingURL=main.css.map */

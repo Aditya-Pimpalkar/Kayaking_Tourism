@@ -1,0 +1,111 @@
+/* main-banner - Hero Section */
+.hero {
+  position: relative;
+  height: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Orange Background (1st Layer) */
+.orange-background {
+  position: absolute;
+  top: 40%;
+  right: 30%;
+  width: 50%;
+  height: 400px;
+  background-color: var(--primary-color);
+  z-index: 1; /* Base layer */
+  transform: translate(50%, -50%);
+}
+
+/* Hero Image (2nd Layer) */
+.hero-image {
+  position: absolute;
+  top: 20%;
+  /* right: 5%; */
+  width: 75%;
+  height: auto;
+  justify-content: center;
+  z-index: 2; /* Middle layer */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for effect */
+}
+
+/* Text Box (3rd Layer) */
+.hero-text {
+  position: absolute;
+  bottom: -375px; /* Moves the box below the image */
+  left: 320px;
+  background-color: var(--white-color);
+  padding: 40px;
+  z-index: 3; /* Top layer */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  line-height: 1.4;
+}
+
+.hero-text h1 {
+  font-size: 2.8rem;
+  color: var(--secondary-color);
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+.cta-button {
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  border-radius: 5px;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: #e65a00; /* Darker shade of orange */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background-color: var(--white-color);
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  #menu-toggle:checked + .menu-icon + ul {
+    display: flex;
+  }
+
+  /* Hero Section Responsive */
+  .hero {
+    .hero-image {
+      width: 100%;
+      height: auto;
+    }
+
+    .orange-background {
+      width: 300px;
+      height: 200px;
+    }
+
+    .hero-text {
+      left: 20px;
+      bottom: 20px;
+    }
+  }
+}
