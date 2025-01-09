@@ -4,7 +4,10 @@
 This project implements a **responsive webpage** using **SCSS (Sass)**, offering a clean and maintainable CSS structure by leveraging SCSS features such as variables, mixins, functions, and operators. The webpage layout is designed to closely match a provided UI mockup provided for an assignment and includes several styled UI components for a consistent and modern look.
 
 ---
+🌐 Live Demo
+🔗 Check out the live demo of the website here: https://aditya-pimpalkar.github.io/Kayaking_Tourism/
 
+---
 ## 🌟 Features  
 - 📱 **Responsive Design**: Ensures the webpage is accessible on various devices (mobile, tablet, desktop).  
 - 🗂️ **Organized File Structure**: Follows best practices by separating concerns into different SCSS partials for better maintainability.  
